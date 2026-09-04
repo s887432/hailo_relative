@@ -43,6 +43,15 @@ $ sudo mv hailo8_fw.<VERSION>.bin /lib/firmware/hailo/hailo8_fw.bin
 $ sudo cp ./linux/pcie/51-hailo-udev.rules /etc/udev/rules.d/
 $ sudo udevadm control --reload-rules && sudo udevadm trigger
 
+6. install HailoRT
+$ git clone -b hailo8 https://github.com/hailo-ai/hailort.git
+$ cd hailort
+
+$ cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Release
+$ cmake --build build --config release -j$(nproc)
+$ sudo cmake --build build --target install
+$ sudo ldconfig
+
 // reboot
 check if NPU works well
 $ hailortcli fw-control identify
