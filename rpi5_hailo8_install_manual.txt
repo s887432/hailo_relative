@@ -50,6 +50,14 @@ $ cd hailort
 $ cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Release
 $ cmake --build build --config release -j$(nproc)
 $ sudo cmake --build build --target install
+
+$ mkdir build && cd build
+$ cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DHAILO_BUILD_GSTREAMER=ON -DCMAKE_INSTALL_LIBDIR=lib
+$ make -j$(nproc)
+$ sudo make install
+
+
+
 $ sudo ldconfig
 
 // reboot
