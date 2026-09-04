@@ -56,13 +56,19 @@ $ cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DHAILO_BUILD_GSTREAMER=ON -DCMAKE_INSTAL
 $ make -j$(nproc)
 $ sudo make install
 
-
-
 $ sudo ldconfig
+
+// should be able to find relative files
+ls /usr/include/hailo/
+ls /usr/lib/libhailort.so*
 
 // reboot
 check if NPU works well
 $ hailortcli fw-control identify
+
+7. install tappas
+$ export TAPPAS_WORKSPACE=/home/hailo/Hailo/tappas
+$ ./install.sh --skip-hailort --target-platform rpi5
 
 
 
