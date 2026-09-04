@@ -68,6 +68,12 @@ $ hailortcli fw-control identify
 
 7. install tappas
 $ export TAPPAS_WORKSPACE=/home/hailo/Hailo/tappas
+
+$ git clone https://github.com/hailo-ai/tappas.git
+$ cd tappas
+$ mkdir hailort
+$ git clone https://github.com/hailo-ai/hailort.git -b hailo8 hailort/sources
+
 $ ./install.sh --skip-hailort --target-platform rpi5
 
 
