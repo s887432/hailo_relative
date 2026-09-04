@@ -76,5 +76,11 @@ $ git clone https://github.com/hailo-ai/hailort.git -b hailo8 hailort/sources
 
 $ ./install.sh --skip-hailort --target-platform rpi5
 
+verify if tappas install well
+$ cd apps/detection
+$ ./detection.sh --arch h8
+
+
+
 
 
