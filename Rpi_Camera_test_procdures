@@ -1,0 +1,26 @@
+如果是第三方摄像头模块，需要修改 /boot/firmware/config.txt 配置文件。找到 camera-auto-detect=1 语句，修改为 camera_auto_detect=0 在文件结尾，根据摄像头型号加入以下设置语句
+
+型号	设置语句
+OV9281	dtoverlay=ov9281
+IMX290/IMX327	dtoverlay=imx290,clock-frequency=37125000
+IMX378	dtoverlay=imx378
+IMX219	dtoverlay=imx219
+IMX477	dtoverlay=imx477
+IMX708	dtoverlay=imx708
+
+如果需要同时接入两路摄像头，可以在对应的摄像头配置语句后面加入 cam0 和 cam1 指定摄像头，例如 dtoverlay=imx219,cam0
+
+
+最新的 rpicam-apps 软件包
+$ sudo apt update && sudo apt install rpicam-apps
+
+运行命令，预览摄像头并将摄像头画面显示在屏幕上
+$ rpicam-hello -t 0
+$ rpicam-hello --camera 0 -t 0
+
+$ rpicam-hello --list-cameras
+$ rpicam-hello -t 0 -o capture.jpg
+$ rpicam-hello -t 0 -still -o capture.jpg camera 1
+
+More information about rpicam-hello is here
+https://www.raspberrypi.com/documentation/computers/camera_software.html
