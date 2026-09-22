@@ -18,3 +18,20 @@ $ sudo dmesg | grep -i imx708
 $ sudo apt install -y rpicam-apps
 $ rpicam-hello -t 0
 
+// download pcie driver from hailo developer-zone
+  hailort-pcie-driver_4.24.0_all.deb
+
+// install driver
+$ sudo dpkg -i hailort-pcie-driver_4.24.0_all.deb
+// reboot
+$ sudo reboot now
+
+// load hailo kernel module
+$ sudo modprobe hailo_pci
+
+// check if load well
+$ lsmod | grep hailo
+// or
+$ ls /dev/hailo*
+
+// install hailort
