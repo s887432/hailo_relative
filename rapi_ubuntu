@@ -1,0 +1,3 @@
+CAM
+$ sudo apt install -y rpicam-apps
+$ rpicam-hello -t 0
