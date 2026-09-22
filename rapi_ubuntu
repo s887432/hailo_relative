@@ -1,8 +1,12 @@
 CAM
 
+
 $ sudo nano /boot/firmware/config.txt
+  // disable camera auto detect if uses non-official RipCAM V3
   camera_auto_detect=0
+  // enable dtoverlay for CAM0
   dtoverlay=imx708,cam0
+  // enable dtoverlay for CAM1 (Option)
   dtoverlay=imx708,cam1
 
 $ sudo reboot now
