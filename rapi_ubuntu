@@ -35,3 +35,33 @@ $ lsmod | grep hailo
 $ ls /dev/hailo*
 
 // install hailort
+// download hailort_4.24.0_arm64.deb from developer-zone
+$ sudo dpkg -i hailort_4.24.0_arm64.deb
+
+// confirm if install well
+$ hailortcli --version
+$ hailortcli fw-control identify
+
+// check hardware and driver install automatically after reboot
+$ sudo reboot now
+$ lspci | grep -i hailo
+$ lsmod | grep hailo
+$ ls -l /dev/hailo*
+$ hailortcli --version
+$ hailortcli fw-control identify
+
+// install tools
+$ sudo apt install -y python3-venv python3-pip python3-dev git python3-opencv pyenv
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-doctor.git ~/.pyenv/plugins/pyenv-doctor
+git clone https://github.com/pyenv/pyenv-update.git ~/.pyenv/plugins/pyenv-update
+
+pyenv install 3.13
+pyenv local 3.13
+python --version
+
+$ python3 -m venv ~/hailo-yolo --system-site-packages
+$ source ~/hailo-yolo/bin/activate
+
+
