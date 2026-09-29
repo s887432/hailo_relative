@@ -1,6 +1,9 @@
-CAM
+// install tools
+$ sudo apt update
+$ sudo apt full-upgrade
+$ sudo apt install -y gedit net-tools
 
-
+// CAM
 $ sudo nano /boot/firmware/config.txt
   // disable camera auto detect if uses non-official RipCAM V3
   camera_auto_detect=0
