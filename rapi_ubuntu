@@ -29,6 +29,8 @@ $ sudo pip3 install meson
 $ sudo apt install -y libcamera-dev libepoxy-dev libjpeg-dev libtiff5-dev libpng-dev
 $ sudo apt install -y cmake libboost-program-options-dev libdrm-dev libexif-dev
 $ sudo apt install -y meson ninja-build
+$ sudo apt install -y libavcodec-dev libavdevice-dev libavformat-dev libswresample-dev
+$ sudo apt install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5core5a libqt5gui5 libqt5widgets5
 $ git clone https://github.com/raspberrypi/rpicam-apps.git
 $ cd rpicam-apps
 $ meson setup build -Denable_libav=true -Denable_drm=true -Denable_egl=true -Denable_qt=true -Denable_opencv=false -Denable_tflite=false
